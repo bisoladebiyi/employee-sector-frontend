@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Roboto", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html, body, .App {
+  height: 100%;
+  background: #FBFBFB;
+}
+
+.animate {
+  transition: transform .1s ease-in-out;
+}
+
+.active {
+  position: relative;
+  color: #F6B734;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: #F6B734;
+  border-radius: 3px;
+}
+
+/* fix styling on ios/safari  */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
