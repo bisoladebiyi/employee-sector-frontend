@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { Oval } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../utils/constants";
 import { isCurrentUserData } from "../utils/helpers";
@@ -8,6 +9,7 @@ import { getAllSectors } from "../utils/requests";
 const ListCard = ({ employee, remove }) => {
   const [mainSector, setMainSector] = useState("");
   const [subSector, setSubSector] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
   const isOwnData = isCurrentUserData(employee.user_id);
 
   useEffect(() => {
@@ -23,6 +25,12 @@ const ListCard = ({ employee, remove }) => {
 
     setMainSector(parent_name);
     setSubSector(name);
+  };
+
+  const deleteInfo = () => {
+    setIsDeleting(true);
+    remove(employee.id);
+    setIsDeleting(false);
   };
 
   return (
@@ -50,7 +58,7 @@ const ListCard = ({ employee, remove }) => {
           )}
         </div>
         {isOwnData && (
-          <div>
+          <div className="flex items-center">
             <Link
               to={ROUTES.EDIT + `/${employee.id}`}
               className="text-[10px] text-white underline mr-2"
@@ -59,9 +67,23 @@ const ListCard = ({ employee, remove }) => {
             </Link>
             <button
               className="text-[10px] text-white underline"
-              onClick={() => remove(employee.id)}
+              onClick={deleteInfo}
             >
-              Delete
+              {isDeleting ? (
+                <Oval
+                  height={12}
+                  width={12}
+                  color="#fff"
+                  wrapperClass="flex justify-center"
+                  visible={true}
+                  ariaLabel="oval-loading"
+                  secondaryColor="#4fa94d"
+                  strokeWidth={3}
+                  strokeWidthSecondary={3}
+                />
+              ) : (
+                "Delete"
+              )}
             </button>
           </div>
         )}

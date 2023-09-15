@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import not_found from "../assets/not_found.png";
+import not_found from "../assets/images/not_found.png";
 import { ROUTES } from "../utils/constants";
 
 const EmptyState = () => {

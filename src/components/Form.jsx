@@ -1,7 +1,7 @@
 import { Oval } from "react-loader-spinner";
 import Input from "./Input";
 import SectorOptions from "./SectorOptions";
-import arrow from "../assets/letter_send 1.png";
+import arrow from "../assets/images/letter_send 1.png";
 
 const Form = ({
   btnText,
