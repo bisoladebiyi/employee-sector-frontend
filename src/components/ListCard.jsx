@@ -27,9 +27,9 @@ const ListCard = ({ employee, remove }) => {
     setSubSector(name);
   };
 
-  const deleteInfo = () => {
+  const deleteInfo = async() => {
     setIsDeleting(true);
-    remove(employee.id);
+    await remove(employee.id);
     setIsDeleting(false);
   };
 

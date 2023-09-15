@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import AddEmployee from "./pages/AddEmployee";
 import EditEmployee from "./pages/EditEmployee";
 import EmployeesList from "./pages/EmployeesList";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   // create a user id
@@ -21,6 +22,7 @@ const App = () => {
         <Route element={<EmployeesList />} path={ROUTES.HOME} />
         <Route element={<AddEmployee />} path={ROUTES.ADD} />
         <Route element={<EditEmployee />} path={ROUTES.EDIT + "/:id"} />
+        <Route element={<NotFound />} path={"*"} />
       </Routes>
     </div>
   );

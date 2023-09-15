@@ -3,7 +3,7 @@
 ## Built with:
 
 - [React](https://reactjs.org/) - JS library
-- [TailwindCSS](https://sass-lang.com/) - CSS Framework
+- [TailwindCSS](https://tailwindcss.com/) - CSS Framework
 
 ## Live site:
 
@@ -18,10 +18,9 @@
 
 ![Dahboard](/src/assets/images/dashboard.png)
 ![Empty State](/src/assets/images/emptystate.png)
-![Add Employee View](/src/assets/images/addemployee.png)
+![Add Employee View](/src/assets/images/addnewemployee.png)
 ![Edit Employee View](/src/assets/images/editemployee.png)
 ![Mobile view](/src/assets/images/mobiledashboardview.png)
-![Mobile view](/src/assets/images/mobileemptystateview.png)
 ![Mobile view](/src/assets/images/mobileformview.png)
 
 ## Set Up
